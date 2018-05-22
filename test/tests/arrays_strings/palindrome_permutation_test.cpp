@@ -37,5 +37,17 @@ TEST( PALINDROME_PERMUTATION, NOT_IN_ORDER_FALSE ) {
 }
 
 TEST( PALINDROME_PERMUTATION, UPPER_CASE ) {
-    ASSERT_ANY_THROW( is_palindrome_permutation( "Abc" ) );
+    ASSERT_TRUE( is_palindrome_permutation( "Aba" ) );
+}
+
+TEST( PALINDROME_PERMUTATION, SPACE1 ) {
+    ASSERT_TRUE( is_palindrome_permutation( "Tact Coa" ) );
+}
+
+TEST( PALINDROME_PERMUTATION, SPACE2 ) {
+    ASSERT_TRUE( is_palindrome_permutation( "Ding Dong" ) );
+}
+
+TEST( PALINDROME_PERMUTATION, SPACE3 ) {
+    ASSERT_TRUE( is_palindrome_permutation( "Belly be" ) );
 }

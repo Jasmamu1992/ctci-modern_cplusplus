@@ -18,7 +18,10 @@ PER_SRC_TEST_ARGS = ({
 cc_test(
 name = "algorithms-test",
 size = "small",
-srcs = glob(["tests/**/*.cpp"]),
+srcs = glob(["tests/arrays_strings/isunique_test.cpp",
+             "tests/arrays_strings/check_permutation_test.cpp",
+             "tests/arrays_strings/urlify_test.cpp",
+             "tests/arrays_strings/palindrome_permutation_test.cpp"]),
 copts = TEST_COPTS,
 
     deps = [
@@ -27,59 +30,5 @@ copts = TEST_COPTS,
         "@gtest//:gtest",
         "@gtest//:gtest_main",
         "//include/arrays_strings:arrays_strings",
-        "//include/linked_lists:linked_lists",
-        "//include/backtracking:backtracking",
-        "//include/bit_manipulation:bit_manipulation",
-        "//include/math_logic:math_logic",
-        "//include/recursion_dp:recursion_dp",
-        "//include/stacks_queues:stacks_queues",
-        "//include/trees_graphs:trees_graphs",
     ],
 ) 
-
-cc_test(
-name = "algorithms-benchmark",
-size = "small",
-srcs = glob(["benchmark/*.cpp"]),
-copts = TEST_COPTS,
-
-    deps = [
-        "@benchmark//:benchmark",
-        "@benchmark//:benchmark_internal_headers",        
-        "@gtest//:gtest",
-        "//include/arrays_strings:arrays_strings",
-        "//include/linked_lists:linked_lists",
-        "//include/backtracking:backtracking",
-        "//include/bit_manipulation:bit_manipulation",
-        "//include/math_logic:math_logic",
-        "//include/recursion_dp:recursion_dp",
-        "//include/stacks_queues:stacks_queues",
-        "//include/trees_graphs:trees_graphs",
-    ],
-) 
-
-#[
-#    cc_test(
-#    name = test_src[:-len(".cpp")],
-#    size = "small",
-#    srcs = [test_src],
-#    args = TEST_ARGS + PER_SRC_TEST_ARGS.get(test_src, []),
-#   copts = TEST_COPTS,
-    
-#        deps = [
-#            "@benchmark//:benchmark",
-#            "@benchmark//:benchmark_internal_headers",        
-#            "@gtest//:gtest",
-#            "//include/arrays_strings:arrays_strings",
-#            "//include/backtracking:backtracking",
-#            "//include/bit_manipulation:bit_manipulation",
-#            "//include/math_logic:math_logic",
-#            "//include/recursion_dp:recursion_dp",
-#            "//include/stacks_queues:stacks_queues",
-#            "//include/trees_graphs:trees_graphs",
-#        ] + (
-#            [ "@gtest//:gtest_main"] if (test_src[-len("test.cpp"):] == "test.cpp") else []
-#        ),
-#    ) for test_src in glob(["*.cc", "*.cpp"])
-#]
-

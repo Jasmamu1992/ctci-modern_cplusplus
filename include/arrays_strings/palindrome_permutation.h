@@ -1,62 +1,23 @@
-/**
- * @brief Palindrome Permutation
- *  Check if a string is a permutation of a palindrome.
- *  A palindrome is a word or phrase that is the same forwards and backwards.
- *  A permutation is a rearrangement of letters. The palindrome does not need to be limited to just
- *  dictionary words.
- *
- *  EXAMPLE Input: TactoCoa Output: True (permutations: "tacoocat". "atcoocta". etc.)
- *
- * @file palindrome_permutation.h
- * @author Tushar Chugh
- */
-
 #pragma once
-
-#include <array>
 #include <string>
+#include <vector>
 
-namespace algorithm {
-
-constexpr size_t NUM_ALPHABETS = 26;
-
-/**
- * @brief helper function to convert char to a number in range from 0 to 25
- *
- * @param input character
- * @return int interger from 0
- */
-size_t char_to_number( const char input ) {
-    if ( ( input - 'a' >= 0 ) && ( input - 'z' <= 0 ) ) {
-        return input - 'a';
-    }
-    std::__throw_invalid_argument( "Not a lower case alphabet" );
-}
-
-/**
- * @brief Check if a string is a permutation of a palindrome
- * 1. Run time complexity
- * 2. Memory complexity
- * 3. Case insensitive
- * @param input input string
- * @return true if the string is a permutation of palindrome
- * @return false  if the string is not a permutation of palindrome
- */
-bool is_palindrome_permutation( const std::string& input ) {
-    // Build frequency table for the the charachters
-    std::array<size_t, NUM_ALPHABETS> frequencies{};
-
-    for ( auto letter : input )
-        ++frequencies.at( char_to_number( letter ) );
-
-    // Check if no more than one character has odd frequency
-    bool seen_one_frequency = false;
-    for ( auto frequency : frequencies ) {
-        if ( frequency % 2 ) {
-            if ( seen_one_frequency ) return false;
-            seen_one_frequency = true;
+namespace algorithm{
+    bool is_palindrome_permutation(const std::string& str){
+        constexpr size_t NUM_CHAR = 256;
+        std::vector<bool> counter(256);
+        int diff = 'a'-'A';
+        int space = ' ';
+        for(auto s:str){
+            if ((s>='a') & (s<='z')) s-=diff;
+            counter.at(s) = (counter.at(s) != true);
         }
+        unsigned int numTrue = 0;
+        for(unsigned int i=0;i<NUM_CHAR;++i){
+            if(counter.at(i)==true) numTrue++;
+        }
+        if(counter.at(space)) numTrue-=2;
+        // std::cout<<numTrue<<std::endl;
+        return((str.length()%2)==numTrue);
     }
-    return true;
 }
-} // namespace algorithm
