@@ -18,10 +18,7 @@ PER_SRC_TEST_ARGS = ({
 cc_test(
 name = "algorithms-test",
 size = "small",
-srcs = glob(["tests/arrays_strings/isunique_test.cpp",
-             "tests/arrays_strings/check_permutation_test.cpp",
-             "tests/arrays_strings/urlify_test.cpp",
-             "tests/arrays_strings/palindrome_permutation_test.cpp"]),
+srcs = glob(["tests/arrays_strings/*.cpp"]),
 copts = TEST_COPTS,
 
     deps = [

@@ -1,24 +1,30 @@
-#include <string>
-#include <vector>
 #include <iostream>
+#include <string>
 
-bool palindrome_permutation(const std::string& str){
-    constexpr size_t NUM_CHAR = 256;
-    std::vector<bool> counter(256);
-    for(auto s:str){
-        counter.at(s) = (counter.at(s) != true);
+namespace algorithm{
+    bool is_rotation(const std::string& str, const std::string& substr){
+        std::size_t subSize = substr.size();
+        std::size_t strSize = str.size();
+        std::string tempstr;
+        if(subSize>strSize) return false;
+        for(std::size_t i=0; i<strSize; ++i){
+            if(strSize-i < subSize){
+                tempstr = str.substr(i) + str.substr(0, i);
+            }
+            else{
+                tempstr = str.substr(i, i+subSize);
+            }
+            std::cout << tempstr << std::endl;
+            if(substr.compare(tempstr)==0) return true;
+        }
+        return false;
     }
-    unsigned int numTrue = 0;
-    for(unsigned int i=0;i<NUM_CHAR;++i){
-        if(counter.at(i)==true) numTrue++;
-    }
-    std::cout<<numTrue<<std::endl;
-    return((str.length()%2)==numTrue);
 }
 
+using algorithm::is_rotation;
 using namespace std;
 int main(){
-    cout<< palindrome_permutation("ab  ma") << endl;
+    cout << is_rotation( "abc", "abc" ) << endl;
     return 0;
 }
 

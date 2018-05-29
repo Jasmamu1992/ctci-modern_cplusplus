@@ -3,6 +3,10 @@
 #include <vector>
 
 namespace algorithm{
+    /*
+    *complexity Time:O(N), Memory:O(N)
+    *N:number of characters in the string
+    */
     bool is_palindrome_permutation(const std::string& str){
         constexpr size_t NUM_CHAR = 256;
         std::vector<bool> counter(256);
