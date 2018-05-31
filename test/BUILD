@@ -18,7 +18,11 @@ PER_SRC_TEST_ARGS = ({
 cc_test(
 name = "algorithms-test",
 size = "small",
-srcs = glob(["tests/arrays_strings/*.cpp"]),
+srcs = glob(["tests/arrays_strings/*.cpp",
+             "tests/linked_lists/forward_list_test.cpp",
+             "tests/linked_lists/remove_dups_test.cpp",
+             "tests/linked_lists/kth_tolast_test.cpp",
+             "tests/linked_lists/remove_node.cpp"]),
 copts = TEST_COPTS,
 
     deps = [
@@ -27,5 +31,6 @@ copts = TEST_COPTS,
         "@gtest//:gtest",
         "@gtest//:gtest_main",
         "//include/arrays_strings:arrays_strings",
+        "//include/linked_lists:linked_lists",
     ],
 ) 
