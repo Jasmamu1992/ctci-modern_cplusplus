@@ -3,6 +3,7 @@
 
 using algorithm::is_palindrome_reverse;
 using algorithm::is_palindrome_stack;
+// using algorithm::is_palindrome_rec;
 
 TEST( PALINDROME_LIST, REVERSE_METHOD_LETTERS ) {
     std::forward_list<char> input = {'a', 'b', 'c', 'c', 'b', 'a'};
@@ -13,3 +14,8 @@ TEST( PALINDROME_LIST, STACK_MENTHOD_LETTERS ) {
     std::forward_list<char> input = {'a', 'b', 'c', 'c', 'b', 'a'};
     ASSERT_TRUE( is_palindrome_stack( input ) );
 }
+
+// TEST( PALINDROME_LIST, RECURSION_MENTHOD_LETTERS ) {
+//     std::forward_list<char> input = {'a', 'b', 'c', 'c', 'b', 'a'};
+//     ASSERT_TRUE( is_palindrome_rec( input ) );
+// }

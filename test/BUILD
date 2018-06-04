@@ -22,7 +22,12 @@ srcs = glob(["tests/arrays_strings/*.cpp",
              "tests/linked_lists/forward_list_test.cpp",
              "tests/linked_lists/remove_dups_test.cpp",
              "tests/linked_lists/kth_tolast_test.cpp",
-             "tests/linked_lists/remove_node.cpp"]),
+             "tests/linked_lists/remove_node.cpp",
+             "tests/linked_lists/partition.cpp",
+             "tests/linked_lists/sum_lists_test.cpp",
+             "tests/linked_lists/palindrom_list_test.cpp",
+             "tests/linked_lists/intersection.cpp",
+             "tests/linked_lists/loop_detection_test.cpp"]),
 copts = TEST_COPTS,
 
     deps = [
