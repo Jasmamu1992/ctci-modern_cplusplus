@@ -2,7 +2,7 @@
 #include <gtest/gtest.h>
 
 TEST( THREE_ONE, THREE_SIZE_TWO_STACKS ) {
-    algorithm::MultiStack<int> input( 6, 2 );
+    algorithm::MultiStack<int> input( 3, 5 );
     input.push( 0, 1 );
     ASSERT_EQ( 1, input.top( 0 ) );
     input.push( 0, 2 );
