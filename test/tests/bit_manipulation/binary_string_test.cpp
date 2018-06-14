@@ -15,3 +15,18 @@ TEST( BINARY_STRING, ERROR_TEST ) {
     ASSERT_EQ( "ERROR", algorithm::binary_string( 10 ) );
     ASSERT_EQ( "ERROR", algorithm::binary_string( -10 ) );
 }
+
+TEST( BINARY_STRING_NOSHIFT, DEMO_TEST ) {
+    ASSERT_EQ( "1", algorithm::binary_string_NoShift( 0.5 ) );
+    ASSERT_EQ( "101", algorithm::binary_string_NoShift( 0.625 ) );
+    ASSERT_EQ( "11", algorithm::binary_string_NoShift( 0.750 ) );
+    ASSERT_EQ( "111", algorithm::binary_string_NoShift( 0.875 ) );
+}
+
+TEST( BINARY_STRING_NOSHIFT, ERROR_TEST ) {
+    ASSERT_EQ( "ERROR", algorithm::binary_string_NoShift( 0 ) );
+    ASSERT_EQ( "ERROR", algorithm::binary_string_NoShift( 1 ) );
+    ASSERT_EQ( "ERROR", algorithm::binary_string_NoShift( -1 ) );
+    ASSERT_EQ( "ERROR", algorithm::binary_string_NoShift( 10 ) );
+    ASSERT_EQ( "ERROR", algorithm::binary_string_NoShift( -10 ) );
+}

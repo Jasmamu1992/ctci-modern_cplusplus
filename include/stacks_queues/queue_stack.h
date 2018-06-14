@@ -14,7 +14,7 @@ namespace algorithm{
     void push(const T& value) {
         stackNew.push_front(value);
     }
-    T& pop() {
+    T pop() {
         if(stackOld.empty()){
             if(stackNew.empty()) throw std::runtime_error("queue is empty");
             while(!stackNew.empty()){
