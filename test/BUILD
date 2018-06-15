@@ -24,7 +24,10 @@ srcs = glob(["tests/arrays_strings/*.cpp",
              "tests/bit_manipulation/insertion_bits_test.cpp",
              "tests/bit_manipulation/binary_string_test.cpp",
              "tests/bit_manipulation/flip_bit_win_test.cpp",
-             "tests/bit_manipulation/next_number_test.cpp"]),
+             "tests/bit_manipulation/next_number_test.cpp",
+             "tests/bit_manipulation/conversion_flip_test.cpp",
+             "tests/bit_manipulation/pairwise_swap_test.cpp",
+             "tests/bit_manipulation/draw_line_test.cpp"]),
 copts = TEST_COPTS,
 
 deps = [
