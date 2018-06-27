@@ -21,13 +21,8 @@ size = "small",
 srcs = glob(["tests/arrays_strings/*.cpp",
              "tests/linked_lists/*.cpp",
              "tests/stacks_queues/*.cpp",
-             "tests/bit_manipulation/insertion_bits_test.cpp",
-             "tests/bit_manipulation/binary_string_test.cpp",
-             "tests/bit_manipulation/flip_bit_win_test.cpp",
-             "tests/bit_manipulation/next_number_test.cpp",
-             "tests/bit_manipulation/conversion_flip_test.cpp",
-             "tests/bit_manipulation/pairwise_swap_test.cpp",
-             "tests/bit_manipulation/draw_line_test.cpp"]),
+             "tests/bit_manipulation/*.cpp",
+             "tests/trees_graphs/bst_test.cpp"]),
 copts = TEST_COPTS,
 
 deps = [
@@ -38,6 +33,7 @@ deps = [
     "//include/arrays_strings:arrays_strings",
     "//include/linked_lists:linked_lists",
     "//include/stacks_queues:stacks_queues",
-    "//include/bit_manipulation:bit_manipulation"
+    "//include/bit_manipulation:bit_manipulation",
+     "//include/trees_graphs:trees_graphs"
 ],
 ) 
