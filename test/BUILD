@@ -22,7 +22,9 @@ srcs = glob(["tests/arrays_strings/*.cpp",
              "tests/linked_lists/*.cpp",
              "tests/stacks_queues/*.cpp",
              "tests/bit_manipulation/*.cpp",
-             "tests/trees_graphs/bst_test.cpp"]),
+             "tests/trees_graphs/bst_test.cpp",
+             "tests/trees_graphs/adj_list_graph_test.cpp",
+             "tests/trees_graphs/route_nodes_test.cpp"]),
 copts = TEST_COPTS,
 
 deps = [

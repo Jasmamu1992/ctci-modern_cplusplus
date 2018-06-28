@@ -22,8 +22,8 @@ TEST( ROUTE_NODES, DEMO ) {
     ASSERT_TRUE( algorithm::route_between_nodes( input, 3, 3 ) );
     ASSERT_TRUE( algorithm::route_between_nodes( input, 4, 4 ) );
 
-    ASSERT_FALSE( algorithm::route_between_nodes( input, 0, 3 ) );
-    ASSERT_FALSE( algorithm::route_between_nodes( input, 0, 4 ) );
+    ASSERT_TRUE( algorithm::route_between_nodes( input, 0, 3 ) );
+    ASSERT_TRUE( algorithm::route_between_nodes( input, 0, 4 ) );
     ASSERT_FALSE( algorithm::route_between_nodes( input, 1, 0 ) );
     ASSERT_FALSE( algorithm::route_between_nodes( input, 1, 2 ) );
 }
