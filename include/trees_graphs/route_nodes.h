@@ -15,22 +15,18 @@ bool route_between_nodes( adj_list_graph<true> graph, node start, node end ) {
     visited.at( start ) = true;
     while ( !queue.empty() ) {
         node n = queue.front();
-        std::cout << n;
         queue.pop_front();
         if ( n == end ) {
-            std::cout << std::endl;
             return true;
         }
         list_type r = graph.adjacent_vertices( n );
         for ( auto x = r.begin(); x != r.end(); ++x ) {
             if ( visited.at( *x ) == false ) {
-                std::cout << " ;;" << *x << " ;;";
                 visited.at( *x ) = true;
                 queue.push_back( *x );
             }
         }
     }
-    std::cout << std::endl;
     return false;
 }
 } // namespace algorithm

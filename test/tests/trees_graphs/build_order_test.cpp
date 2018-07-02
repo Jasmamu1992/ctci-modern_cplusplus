@@ -2,7 +2,7 @@
 #include <gtest/gtest.h>
 
 TEST( BUILD_ORDER, DEMO ) {
-    std::vector<char> projects = {'a', 'b', 'c', 'd', 'e', 'f'};
+    std::vector<char> projects                           = {'a', 'b', 'c', 'd', 'e', 'f'};
     std::unordered_multimap<char, char> dependency_pairs = {
         {'d', 'a'}, {'b', 'f'}, {'d', 'b'}, {'a', 'f'}, {'c', 'd'}};
     std::vector<char> expected_output = {'f', 'a', 'b', 'd', 'c', 'e'};
@@ -11,7 +11,7 @@ TEST( BUILD_ORDER, DEMO ) {
 }
 
 TEST( BUILD_ORDER, CYCLIC_TEST ) {
-    std::vector<char> projects = {'a', 'b', 'c', 'd', 'e', 'f'};
+    std::vector<char> projects                           = {'a', 'b', 'c', 'd', 'e', 'f'};
     std::unordered_multimap<char, char> dependency_pairs = {{'d', 'a'}, {'b', 'f'}, {'d', 'b'},
                                                             {'a', 'f'}, {'c', 'd'}, {'a', 'd'}};
 
@@ -24,4 +24,29 @@ TEST( BUILD_ORDER, EMPTY_TEST ) {
     std::vector<char> expected_output;
 
     ASSERT_EQ( expected_output, algorithm::build_order( projects, dependency_pairs ) );
+}
+
+TEST( BUILD_ORDER, SOLUTION2_DEMO ) {
+    std::vector<char> projects                           = {'a', 'b', 'c', 'd', 'e', 'f'};
+    std::unordered_multimap<char, char> dependency_pairs = {
+        {'d', 'a'}, {'b', 'f'}, {'d', 'b'}, {'a', 'f'}, {'c', 'd'}};
+    std::vector<char> expected_output = {'f', 'e', 'a', 'b', 'd', 'c'};
+
+    ASSERT_EQ( expected_output, algorithm::build_order_sol2( projects, dependency_pairs ) );
+}
+
+TEST( BUILD_ORDER, SOLUTION2_CYCLIC_TEST ) {
+    std::vector<char> projects                           = {'a', 'b', 'c', 'd', 'e', 'f'};
+    std::unordered_multimap<char, char> dependency_pairs = {{'d', 'a'}, {'b', 'f'}, {'d', 'b'},
+                                                            {'a', 'f'}, {'c', 'd'}, {'a', 'd'}};
+
+    ASSERT_ANY_THROW( algorithm::build_order_sol2( projects, dependency_pairs ) );
+}
+
+TEST( BUILD_ORDER, SOLUTION2_EMPTY_TEST ) {
+    std::vector<char> projects;
+    std::unordered_multimap<char, char> dependency_pairs;
+    std::vector<char> expected_output;
+
+    ASSERT_EQ( expected_output, algorithm::build_order_sol2( projects, dependency_pairs ) );
 }

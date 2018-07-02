@@ -183,7 +183,6 @@ public:
     size_type size() const noexcept {
         return size_;
     }
-
     bool empty() const noexcept {
         return size_ == 0;
     }
