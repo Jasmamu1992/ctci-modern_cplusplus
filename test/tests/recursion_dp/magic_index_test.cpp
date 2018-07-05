@@ -12,13 +12,13 @@ TEST( MAGIC_INDEX, FIRST ) {
 }
 
 TEST( MAGIC_INDEX, LAST ) {
-    std::vector<int> input = {-1, 1, 0, 1, 2, 3, 4, 5, 7, 8, 10};
+    std::vector<int> input = {-1, 19, 0, 1, 2, 3, 4, 5, 7, 8, 10};
     ASSERT_EQ( 10, algorithm::magic_index( input ) );
 }
 
 TEST( MAGIC_INDEX, EMPTY ) {
     std::vector<int> input;
-    ASSERT_EQ( 0, algorithm::magic_index( input ) );
+    ASSERT_EQ( -1, algorithm::magic_index( input ) );
 }
 
 TEST( MAGIC_INDEX, LEFT_SIDE ) {
@@ -27,6 +27,6 @@ TEST( MAGIC_INDEX, LEFT_SIDE ) {
 }
 
 TEST( MAGIC_INDEX, RIGHT_SIDE ) {
-    std::vector<int> input = {-1, 1, 0, 1, 2, 3, 6, 8, 10};
+    std::vector<int> input = {-1, 19, 0, 1, 2, 3, 6, 8, 10};
     ASSERT_EQ( 6, algorithm::magic_index( input ) );
 }

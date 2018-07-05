@@ -1,6 +1,5 @@
 #pragma once
 #include <cmath>
-#include <iostream>
 #include "bst.h"
 
 using node_pointer = typename algorithm::bst<int>::node_raw_pointer;
@@ -19,7 +18,7 @@ bool is_balanced( bst<int> input ) {
     if ( root == nullptr ) return false;
     node_pointer end( input.end_pointer() );
     bool balanced = true;
-    std::cout << subTreeHeight( root, end, balanced ) << std::endl;
+    subTreeHeight( root, end, balanced );
     return balanced;
 }
 } // namespace algorithm
