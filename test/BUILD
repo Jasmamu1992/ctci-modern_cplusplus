@@ -33,7 +33,10 @@ srcs = glob(["tests/arrays_strings/*.cpp",
              "tests/recursion_dp/permutation_with_dups_test.cpp",
              "tests/recursion_dp/parens_test.cpp",
              "tests/recursion_dp/paint_fill_test.cpp",
-             "tests/recursion_dp/coins_test.cpp"]),
+             "tests/recursion_dp/coins_test.cpp",
+             "tests/recursion_dp/eight_queen_test.cpp",
+             "tests/recursion_dp/stack_boxes_test.cpp",
+             "tests/recursion_dp/boolean_evaluation_test.cpp"]),
 copts = TEST_COPTS,
 
 deps = [
